@@ -9,7 +9,7 @@ window.HRINGR = {
    */
   waitlist: {
     // Inbox that receives signups (FormSubmit). Replace with your real email, redeploy, then confirm FormSubmit's activation message.
-    email: "",
+    email: "steini@steiniemils.com",
     subject: "HRINGR waitlist — Anchor Hoodie",
   },
 
