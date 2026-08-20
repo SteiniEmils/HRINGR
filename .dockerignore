@@ -11,3 +11,5 @@ ChatGPT Image*
 20c345ca-*
 295fff59-*
 README.md
+site/assets/*.png
+site/compress_assets.py

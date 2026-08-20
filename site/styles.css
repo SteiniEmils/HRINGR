@@ -290,18 +290,6 @@ h2,
   top: 6px;
 }
 
-.nav-bar.is-open .nav-links {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: var(--nav-h);
-  left: 0;
-  right: 0;
-  padding: 1.25rem;
-  background: rgba(0, 0, 0, 0.96);
-  border-bottom: 1px solid var(--line);
-}
-
 @media (min-width: 860px) {
   .nav-toggle {
     display: none;
@@ -338,12 +326,120 @@ h2,
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.82) 0%,
-    rgba(0, 0, 0, 0.45) 48%,
-    rgba(0, 0, 0, 0.25) 100%
-  ),
-    linear-gradient(0deg, rgba(0, 0, 0, 0.75) 0%, transparent 45%);
+      90deg,
+      rgba(0, 0, 0, 0.88) 0%,
+      rgba(0, 0, 0, 0.55) 42%,
+      rgba(0, 0, 0, 0.28) 100%
+    ),
+    linear-gradient(0deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.2) 48%, transparent 70%);
+}
+
+.hero-content .h1,
+.hero-content .lead,
+.hero-content .eyebrow,
+.hero-content .hero-meta {
+  text-shadow: 0 1px 18px rgba(0, 0, 0, 0.55);
+}
+
+.hero-media picture,
+.gallery-main picture,
+.hotspot-stage picture,
+.brand-visual picture,
+.tile picture,
+.set-media picture,
+.final-cta-bg picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-media img,
+.gallery-main img,
+.hotspot-stage img,
+.brand-visual img,
+.tile img,
+.final-cta-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hotspot-detail {
+  display: block;
+  margin: 0 0 1.15rem;
+  border: 1px solid var(--line);
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: #0a0a0a;
+}
+
+.hotspot-detail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+.nav-bar.is-open .nav-links {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: var(--nav-h);
+  left: 0;
+  right: 0;
+  padding: 0.5rem 1.25rem 1.5rem;
+  background: rgba(0, 0, 0, 0.98);
+  border-bottom: 1px solid var(--line);
+  gap: 0;
+}
+
+.nav-bar.is-open .nav-links a {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.85rem;
+}
+
+.mobile-cta {
+  z-index: 95;
+}
+
+@media (max-width: 959px) {
+  .hero {
+    min-height: calc(100svh - var(--nav-h));
+  }
+
+  .hero-content {
+    padding-bottom: 5.5rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .product-info {
+    padding-bottom: 0.5rem;
+  }
+
+  .sizes .size-btn {
+    flex: 1 1 calc(20% - 0.5rem);
+    min-width: 3rem;
+  }
+
+  .hotspot {
+    width: 48px;
+    height: 48px;
+  }
 }
 
 .hero-content {

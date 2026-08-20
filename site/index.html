@@ -13,7 +13,8 @@
       property="og:description"
       content="Thoughtfully engineered apparel that eliminates noise, so you can focus on what matters."
     />
-    <meta property="og:image" content="assets/hoodie-front.png" />
+    <meta property="og:image" content="assets/hoodie-front.jpg" />
+    <link rel="preload" as="image" href="assets/hero.webp" type="image/webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -46,19 +47,22 @@
 
     <main id="main">
       <!-- Hero: still for now; swap in muted loop video when available
-      <video class="hero-video" muted loop playsinline poster="assets/hero.png">
+      <video class="hero-video" muted loop playsinline poster="assets/hero.jpg">
         <source src="assets/hero.mp4" type="video/mp4" />
       </video>
       -->
       <section class="hero" aria-label="Campaign hero">
         <div class="hero-media">
-          <img
-            src="assets/hero.png"
-            alt="Model wearing the HRINGR Anchor set in Glacier Fractal"
-            width="1600"
-            height="2000"
-            fetchpriority="high"
-          />
+          <picture>
+            <source srcset="assets/hero.webp" type="image/webp" />
+            <img
+              src="assets/hero.jpg"
+              alt="Model wearing the HRINGR Anchor set in Glacier Fractal"
+              width="1122"
+              height="1402"
+              fetchpriority="high"
+            />
+          </picture>
           <div class="hero-overlay" aria-hidden="true"></div>
         </div>
         <div class="hero-content">
@@ -81,13 +85,15 @@
         <div class="section-inner product-grid">
           <div class="gallery-col">
             <div class="gallery-main">
-              <img
-                id="gallery-image"
-                src="assets/hoodie-front.png"
-                alt="Anchor Hoodie front view in Glacier Fractal pattern"
-                width="1200"
-                height="1500"
-              />
+              <picture id="gallery-picture">
+                <source srcset="assets/hoodie-front.webp" type="image/webp" />
+                <img
+                  src="assets/hoodie-front.jpg"
+                  alt="Anchor Hoodie front view in Glacier Fractal pattern"
+                  width="933"
+                  height="1400"
+                />
+              </picture>
               <button class="gallery-nav prev" type="button" aria-label="Previous image">
                 ‹
               </button>
@@ -98,7 +104,7 @@
             <div class="gallery-thumbs" role="group" aria-label="Product images">
               <button class="thumb is-active" type="button" aria-pressed="true">
                 <img
-                  src="assets/hoodie-front.png"
+                  src="assets/hoodie-front.jpg"
                   alt=""
                   width="200"
                   height="200"
@@ -107,7 +113,7 @@
               </button>
               <button class="thumb" type="button" aria-pressed="false">
                 <img
-                  src="assets/hoodie-back.png"
+                  src="assets/hoodie-back.jpg"
                   alt=""
                   width="200"
                   height="200"
@@ -116,7 +122,7 @@
               </button>
               <button class="thumb" type="button" aria-pressed="false">
                 <img
-                  src="assets/pocket-detail.png"
+                  src="assets/pocket-detail.jpg"
                   alt=""
                   width="200"
                   height="200"
@@ -210,13 +216,16 @@
       <section class="section" id="about" aria-labelledby="about-heading">
         <div class="section-inner brand-split">
           <div class="brand-visual reveal">
-            <img
-              src="assets/lifestyle-studio.png"
-              alt="Studio portrait in the Anchor Hoodie"
-              width="1200"
-              height="1500"
-              loading="lazy"
-            />
+            <picture>
+              <source srcset="assets/lifestyle-studio.webp" type="image/webp" />
+              <img
+                src="assets/lifestyle-studio.jpg"
+                alt="Studio portrait in the Anchor Hoodie"
+                width="665"
+                height="1000"
+                loading="lazy"
+              />
+            </picture>
           </div>
           <div class="reveal">
             <p class="eyebrow">Be present</p>
@@ -227,13 +236,16 @@
               and move with purpose.
             </p>
             <div class="logo-callout">
-              <img
-                src="assets/logo.png"
-                alt="HRINGR wordmark — Less to Think About."
-                width="200"
-                height="80"
-                loading="lazy"
-              />
+              <picture>
+                <source srcset="assets/logo.webp" type="image/webp" />
+                <img
+                  src="assets/logo.jpg"
+                  alt="HRINGR wordmark — Less to Think About."
+                  width="200"
+                  height="80"
+                  loading="lazy"
+                />
+              </picture>
               <span>Subtle embroidery. Pattern-led identity. Tiny logos, big clarity.</span>
             </div>
           </div>
@@ -254,13 +266,16 @@
 
           <div class="hotspot-grid">
             <div class="hotspot-stage reveal">
-              <img
-                src="assets/hoodie-front.png"
-                alt="Anchor Hoodie with interactive feature markers"
-                width="1200"
-                height="1500"
-                loading="lazy"
-              />
+              <picture>
+                <source srcset="assets/hoodie-front.webp" type="image/webp" />
+                <img
+                  src="assets/hoodie-front.jpg"
+                  alt="Anchor Hoodie with interactive feature markers"
+                  width="933"
+                  height="1400"
+                  loading="lazy"
+                />
+              </picture>
               <button
                 class="hotspot is-active"
                 type="button"
@@ -293,6 +308,16 @@
 
             <div>
               <div class="hotspot-panel reveal" aria-live="polite">
+                <picture id="hotspot-picture" class="hotspot-detail">
+                  <source srcset="assets/pocket-detail.webp" type="image/webp" />
+                  <img
+                    src="assets/pocket-detail.jpg"
+                    alt="Focus Pocket cutaway with phone and earbuds compartments"
+                    width="989"
+                    height="1400"
+                    loading="lazy"
+                  />
+                </picture>
                 <h3 id="hotspot-title">Focus Pocket™ System</h3>
                 <p id="hotspot-body">
                   Everything in its place. Nothing in the way. Four compartments
@@ -337,33 +362,42 @@
           </div>
           <div class="lifestyle-grid">
             <figure class="tile reveal">
-              <img
-                src="assets/lifestyle-skate.png"
-                alt="Skate action in the HRINGR Anchor set"
-                width="1400"
-                height="1000"
-                loading="lazy"
-              />
+              <picture>
+                <source srcset="assets/lifestyle-skate.webp" type="image/webp" />
+                <img
+                  src="assets/lifestyle-skate.jpg"
+                  alt="Skate action in the HRINGR Anchor set"
+                  width="1120"
+                  height="1400"
+                  loading="lazy"
+                />
+              </picture>
               <figcaption class="tile-caption">Skate</figcaption>
             </figure>
             <figure class="tile reveal">
-              <img
-                src="assets/lifestyle-city.png"
-                alt="Urban street scene with Anchor Collection"
-                width="900"
-                height="1100"
-                loading="lazy"
-              />
+              <picture>
+                <source srcset="assets/lifestyle-city.webp" type="image/webp" />
+                <img
+                  src="assets/lifestyle-city.jpg"
+                  alt="Urban street scene with Anchor Collection"
+                  width="800"
+                  height="1000"
+                  loading="lazy"
+                />
+              </picture>
               <figcaption class="tile-caption">City</figcaption>
             </figure>
             <figure class="tile reveal">
-              <img
-                src="assets/lifestyle-studio.png"
-                alt="Studio fashion portrait in Anchor Hoodie"
-                width="900"
-                height="1100"
-                loading="lazy"
-              />
+              <picture>
+                <source srcset="assets/lifestyle-studio.webp" type="image/webp" />
+                <img
+                  src="assets/lifestyle-studio.jpg"
+                  alt="Studio fashion portrait in Anchor Hoodie"
+                  width="665"
+                  height="1000"
+                  loading="lazy"
+                />
+              </picture>
               <figcaption class="tile-caption">Studio</figcaption>
             </figure>
           </div>
@@ -432,20 +466,26 @@
         <div class="section-inner">
           <article class="set-card reveal">
             <div class="set-media">
-              <img
-                src="assets/pants-front.png"
-                alt="Anchor Pants front view"
-                width="600"
-                height="800"
-                loading="lazy"
-              />
-              <img
-                src="assets/pants-back.png"
-                alt="Anchor Pants back view"
-                width="600"
-                height="800"
-                loading="lazy"
-              />
+              <picture>
+                <source srcset="assets/pants-front.webp" type="image/webp" />
+                <img
+                  src="assets/pants-front.jpg"
+                  alt="Anchor Pants front view"
+                  width="675"
+                  height="900"
+                  loading="lazy"
+                />
+              </picture>
+              <picture>
+                <source srcset="assets/pants-back.webp" type="image/webp" />
+                <img
+                  src="assets/pants-back.jpg"
+                  alt="Anchor Pants back view"
+                  width="675"
+                  height="900"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <div class="set-copy">
               <p class="eyebrow">Complete the set</p>
@@ -538,13 +578,16 @@
       <!-- Final waitlist -->
       <section class="section final-cta" id="final-waitlist" aria-labelledby="final-heading">
         <div class="final-cta-bg" aria-hidden="true">
-          <img
-            src="assets/brand-campaign.png"
-            alt=""
-            width="1600"
-            height="900"
-            loading="lazy"
-          />
+          <picture>
+            <source srcset="assets/brand-campaign.webp" type="image/webp" />
+            <img
+              src="assets/brand-campaign.jpg"
+              alt=""
+              width="745"
+              height="1600"
+              loading="lazy"
+            />
+          </picture>
         </div>
         <div class="section-inner final-cta-inner reveal">
           <p class="eyebrow">Anchor Collection</p>

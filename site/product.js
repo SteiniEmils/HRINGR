@@ -2,6 +2,17 @@
  * HRINGR product data — swap waitlist for checkout later without rewriting layout.
  */
 window.HRINGR = {
+  /**
+   * Waitlist delivery via FormSubmit (no account).
+   * Set `email` to the inbox that should receive signups, redeploy,
+   * then confirm the one-time activation email from FormSubmit.
+   */
+  waitlist: {
+    // Inbox that receives signups (FormSubmit). Replace with your real email, redeploy, then confirm FormSubmit's activation message.
+    email: "",
+    subject: "HRINGR waitlist — Anchor Hoodie",
+  },
+
   product: {
     id: "anchor-hoodie",
     name: "Anchor Hoodie",
@@ -55,15 +66,18 @@ window.HRINGR = {
 
   gallery: [
     {
-      src: "assets/hoodie-front.png",
+      src: "assets/hoodie-front.webp",
+      fallback: "assets/hoodie-front.jpg",
       alt: "Anchor Hoodie front view in Glacier Fractal pattern",
     },
     {
-      src: "assets/hoodie-back.png",
+      src: "assets/hoodie-back.webp",
+      fallback: "assets/hoodie-back.jpg",
       alt: "Anchor Hoodie back view with HRINGR mark at upper back",
     },
     {
-      src: "assets/pocket-detail.png",
+      src: "assets/pocket-detail.webp",
+      fallback: "assets/pocket-detail.jpg",
       alt: "Focus Pocket system and Anchor Hoodie lookbook detail",
     },
   ],
@@ -76,6 +90,9 @@ window.HRINGR = {
       y: 62,
       title: "Focus Pocket™ System",
       body: "Everything in its place. Nothing in the way. Four compartments keep essentials organized and out of sight.",
+      image: "assets/pocket-detail.webp",
+      imageFallback: "assets/pocket-detail.jpg",
+      imageAlt: "Focus Pocket cutaway with phone and earbuds compartments",
       details: [
         "Stabilized Phone Sleeve™ — top-entry phone pocket",
         "Secure Stretch Pockets — earbuds and small gear",
@@ -90,6 +107,9 @@ window.HRINGR = {
       y: 18,
       title: "Anchor Hood™",
       body: "Over-ear compatible. Distraction reducing. A three-part hood shaped to stay put when you move.",
+      image: "assets/hoodie-front.webp",
+      imageFallback: "assets/hoodie-front.jpg",
+      imageAlt: "Anchor Hoodie hood and upper body",
       details: [
         "Fits over large headphones",
         "Generous depth without bulk",
@@ -103,6 +123,9 @@ window.HRINGR = {
       y: 48,
       title: "Anchor Loop™",
       body: "Secure your gear. Stay ready. A discreet anchor point for a removable retractable keychain.",
+      image: "assets/hoodie-back.webp",
+      imageFallback: "assets/hoodie-back.jpg",
+      imageAlt: "Anchor Hoodie back and side construction",
       details: ["Accessory-ready", "Reinforced attachment", "Low-profile when unused"],
     },
     {
@@ -112,6 +135,9 @@ window.HRINGR = {
       y: 40,
       title: "Premium Fabrics",
       body: "480 GSM heavyweight cotton fleece. Dense, soft, and built to hold its shape.",
+      image: "assets/hoodie-front.webp",
+      imageFallback: "assets/hoodie-front.jpg",
+      imageAlt: "Glacier Fractal fleece texture on the Anchor Hoodie",
       details: [
         "480 GSM cotton fleece",
         "Brushed interior",
