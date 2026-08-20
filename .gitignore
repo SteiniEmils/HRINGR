@@ -1,0 +1,14 @@
+# Large source / design files
+*.psd
+*.PSB
+
+# OS / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+
+# Local env
+.env
+.env.*
