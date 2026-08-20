@@ -1,0 +1,13 @@
+# Coolify / Docker ignore — keep the image lean
+.git
+.gitignore
+*.psd
+*.xlsx
+HRINGR_All_Chat_Photos
+ChatGPT Image*
+*.jpeg
+05f22621-*
+1f2aeb82-*
+20c345ca-*
+295fff59-*
+README.md
