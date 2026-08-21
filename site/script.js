@@ -5,6 +5,31 @@
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
+  /* ——— Hero video ——— */
+  const hero = $(".hero");
+  const heroVideo = $(".hero-video");
+  if (hero && heroVideo) {
+    const reduceHeroMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    if (reduceHeroMotion) {
+      hero.classList.add("reduced-motion");
+      heroVideo.pause();
+      heroVideo.removeAttribute("autoplay");
+    } else {
+      hero.classList.add("has-video");
+      const tryPlay = () => {
+        const play = heroVideo.play();
+        if (play && typeof play.catch === "function") {
+          play.catch(() => hero.classList.add("video-failed"));
+        }
+      };
+      if (heroVideo.readyState >= 2) tryPlay();
+      else heroVideo.addEventListener("loadeddata", tryPlay, { once: true });
+      heroVideo.addEventListener("error", () => hero.classList.add("video-failed"));
+    }
+  }
+
   function setPicture(pictureEl, webpSrc, fallbackSrc, alt) {
     if (!pictureEl) return;
     let source = pictureEl.querySelector("source");

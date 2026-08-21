@@ -46,14 +46,21 @@
     </header>
 
     <main id="main">
-      <!-- Hero: still for now; swap in muted loop video when available
-      <video class="hero-video" muted loop playsinline poster="assets/hero.jpg">
-        <source src="assets/hero.mp4" type="video/mp4" />
-      </video>
-      -->
       <section class="hero" aria-label="Campaign hero">
         <div class="hero-media">
-          <picture>
+          <video
+            class="hero-video"
+            muted
+            loop
+            playsinline
+            autoplay
+            preload="metadata"
+            poster="assets/hero.jpg"
+            aria-hidden="true"
+          >
+            <source src="assets/hero.mp4" type="video/mp4" />
+          </video>
+          <picture class="hero-still">
             <source srcset="assets/hero.webp" type="image/webp" />
             <img
               src="assets/hero.jpg"

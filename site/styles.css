@@ -315,6 +315,28 @@ h2,
   inset: 0;
 }
 
+.hero-video {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  background: #000;
+}
+
+.hero-still {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero.video-failed .hero-video,
+.hero.reduced-motion .hero-video {
+  display: none;
+}
+
 .hero-media img {
   width: 100%;
   height: 100%;
@@ -325,6 +347,7 @@ h2,
 .hero-overlay {
   position: absolute;
   inset: 0;
+  z-index: 2;
   background: linear-gradient(
       90deg,
       rgba(0, 0, 0, 0.88) 0%,
@@ -444,7 +467,7 @@ body.nav-open {
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 3;
   width: min(100%, var(--max));
   margin: 0 auto;
   padding: clamp(3rem, 8vw, 6rem) 1.25rem;
@@ -1230,5 +1253,9 @@ body.has-mobile-cta {
 
   .gallery-col {
     position: static;
+  }
+
+  .hero-video {
+    display: none !important;
   }
 }
