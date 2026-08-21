@@ -9,6 +9,18 @@
   const hero = $(".hero");
   const heroVideo = $(".hero-video");
   if (hero && heroVideo) {
+    heroVideo.controls = false;
+    heroVideo.muted = true;
+    heroVideo.defaultMuted = true;
+    heroVideo.setAttribute("muted", "");
+    heroVideo.playsInline = true;
+    heroVideo.disablePictureInPicture = true;
+    try {
+      heroVideo.disableRemotePlayback = true;
+    } catch {
+      /* older browsers */
+    }
+
     const reduceHeroMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
