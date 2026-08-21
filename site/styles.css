@@ -324,12 +324,18 @@ h2,
   z-index: 1;
   width: auto;
   height: auto;
-  min-width: 100%;
-  min-height: 100%;
   max-width: none;
+  max-height: none;
   transform: translate(-50%, -50%);
   background: #000;
   pointer-events: none;
+}
+
+.hero-video-shield {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: transparent;
 }
 
 .hero-video::-webkit-media-controls,
@@ -341,6 +347,8 @@ h2,
   -webkit-appearance: none;
   opacity: 0;
   pointer-events: none;
+  width: 0 !important;
+  height: 0 !important;
 }
 
 .hero-still {
@@ -364,7 +372,7 @@ h2,
 .hero-overlay {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 3;
   pointer-events: none;
   background: linear-gradient(
       90deg,
@@ -485,7 +493,7 @@ body.nav-open {
 
 .hero-content {
   position: relative;
-  z-index: 3;
+  z-index: 4;
   width: min(100%, var(--max));
   margin: 0 auto;
   padding: clamp(3rem, 8vw, 6rem) 1.25rem;

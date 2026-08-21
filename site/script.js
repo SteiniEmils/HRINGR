@@ -10,6 +10,7 @@
   const heroVideo = $(".hero-video");
   if (hero && heroVideo) {
     heroVideo.controls = false;
+    heroVideo.removeAttribute("controls");
     heroVideo.muted = true;
     heroVideo.defaultMuted = true;
     heroVideo.setAttribute("muted", "");
@@ -21,6 +22,23 @@
       /* older browsers */
     }
 
+    const media = $(".hero-media", hero);
+    const coverHeroVideo = () => {
+      if (!media) return;
+      const cw = media.clientWidth;
+      const ch = media.clientHeight;
+      const vw = heroVideo.videoWidth || 720;
+      const vh = heroVideo.videoHeight || 1280;
+      if (!cw || !ch || !vw || !vh) return;
+      const scale = Math.max(cw / vw, ch / vh);
+      heroVideo.style.width = `${Math.ceil(vw * scale)}px`;
+      heroVideo.style.height = `${Math.ceil(vh * scale)}px`;
+    };
+
+    heroVideo.addEventListener("loadedmetadata", coverHeroVideo);
+    window.addEventListener("resize", coverHeroVideo, { passive: true });
+    if (heroVideo.readyState >= 1) coverHeroVideo();
+
     const reduceHeroMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
@@ -31,6 +49,7 @@
     } else {
       hero.classList.add("has-video");
       const tryPlay = () => {
+        coverHeroVideo();
         const play = heroVideo.play();
         if (play && typeof play.catch === "function") {
           play.catch(() => hero.classList.add("video-failed"));

@@ -53,8 +53,9 @@
             muted
             loop
             playsinline
+            webkit-playsinline
             autoplay
-            preload="metadata"
+            preload="auto"
             poster="assets/hero.jpg"
             controlsList="nodownload nofullscreen noremoteplayback noplaybackrate"
             disablePictureInPicture
@@ -64,6 +65,7 @@
           >
             <source src="assets/hero.mp4" type="video/mp4" />
           </video>
+          <div class="hero-video-shield" aria-hidden="true"></div>
           <picture class="hero-still">
             <source srcset="assets/hero.webp" type="image/webp" />
             <img
